@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
 .bg-image {
-    background-image: url("@/assets/T/background-image-allpages.jpg");
+    background-image: url("@/assets/background-image-allpages.jpg");
     background-color: #111517;
     height: 100%;
     width: 100%;
@@ -79,7 +79,7 @@ export default {
 }
 
 .actual-game-container {
-    background-image: url("@/assets/T/lightgreybackground-gamecontainer.png");
+    background-image: url("@/assets/lightgreybackground-gamecontainer.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -176,7 +176,7 @@ export default {
 
 dd {
     display: list-item;
-    list-style-image: url("@/assets/T/checkmark-icon-randomizerpage.png");
+    list-style-image: url("@/assets/checkmark-icon-randomizerpage.png");
     padding-inline-start: 1ch;
     padding: 4px 0;
     margin: 0;

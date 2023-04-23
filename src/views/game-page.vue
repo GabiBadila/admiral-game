@@ -165,7 +165,7 @@ export default {
 }
 
 .bg-image {
-    background-image: url("@/assets/T/background-image-allpages.jpg");
+    background-image: url("@/assets/background-image-allpages.jpg");
     background-color: #111517;
     height: 100%;
     width: 100%;
@@ -177,7 +177,7 @@ export default {
 
 
 .actual-game-container {
-    background-image: url("@/assets/T/lightgreybackground-gamecontainer.png");
+    background-image: url("@/assets/lightgreybackground-gamecontainer.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -228,7 +228,7 @@ export default {
 
 dd {
     display: list-item;
-    list-style-image: url("@/assets/T/checkmark-icon-randomizerpage.png");
+    list-style-image: url("@/assets/checkmark-icon-randomizerpage.png");
     padding-inline-start: 1ch;
     padding: 4px 0;
     margin: 0;
@@ -266,7 +266,7 @@ dd {
 }
 
 .step1-image {
-    background-image: url("@/assets/T/iconstep1-inactive.png");
+    background-image: url("@/assets/iconstep1-inactive.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -275,11 +275,11 @@ dd {
 }
 
 .step1-image.active {
-    background-image: url("@/assets/T/iconstep1-active.png");
+    background-image: url("@/assets/iconstep1-active.png");
 }
 
 .step2-image {
-    background-image: url("@/assets/T/iconstep2-inactive.png");
+    background-image: url("@/assets/iconstep2-inactive.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -288,11 +288,11 @@ dd {
 }
 
 .step2-image.active {
-    background-image: url("@/assets/T/iconstep2-active.png");
+    background-image: url("@/assets/iconstep2-active.png");
 }
 
 .step3-image {
-    background-image: url("@/assets/T/iconstep3-inactive.png");
+    background-image: url("@/assets/iconstep3-inactive.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -301,12 +301,12 @@ dd {
 }
 
 .step3-image.active {
-    background-image: url("@/assets/T/iconstep3-active.png");
+    background-image: url("@/assets/iconstep3-active.png");
 }
 
 
 .step4-image {
-    background-image: url("@/assets/T/iconstep4-inactive.png");
+    background-image: url("@/assets/iconstep4-inactive.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -314,7 +314,7 @@ dd {
 }
 
 .step4-image.active {
-    background-image: url("@/assets/T/iconstep4-active.png");
+    background-image: url("@/assets/iconstep4-active.png");
 }
 
 .bottom-steps.active {
