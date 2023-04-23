@@ -4,12 +4,16 @@
         <div class="blur-bg-image"></div>
         <div class="actual-game-container game-container-flexbox">
             <div>
-                <div id="game-timer-container">
-                    <div id="timer-icon">
-                        <img :src="getImageUrl(`timer-icon.png`)">
+                <div>
+                    <div id="game-timer-container">
+                        <div id="timer-icon">
+                            <img :src="getImageUrl(`timer-icon.png`)">
+                        </div>
+                        <div id="actual-game-timer">{{ timeString }}</div>
                     </div>
-                    <div id="actual-game-timer">{{ timeString }}</div>
+                    <span class="penalization-time">+5</span>
                 </div>
+
                 <img class="randomized-product-image" :src="getImageUrl(store.randomizedProduct.imagePath)">
             </div>
 
@@ -22,7 +26,8 @@
                         <div id="steps-grid-title"> SELECT SIDE PANELS</div>
                         <div id="parts-grid-container">
                             <div class="individual-parts" v-for="component in componentListForActiveStep"
-                                 v-on:click="clickedComponent(component)">
+                                 v-on:click="clickedComponent(component)"
+                                 :class="{active:selectedComponent.articleCode === component.articleCode}">
                                 <img :src="getImageUrl(component.imagePath)">
                             </div>
                         </div>
@@ -46,7 +51,7 @@
                     </div>
                 </div>
             </div>
-
+            <img class="wrong-indicator" :src="getImageUrl('incorrect-choice-image.png')">
             <div class="game-steps-progress">
                 <div class="bottom-steps step1-image" :class="{active:isActiveStep(1)}"></div>
                 <div class="bottom-steps step2-image" :class="{active:isActiveStep(2)}"></div>
@@ -59,20 +64,26 @@
 
 <script>
 import {store} from "@/state/store";
-import {useRouter} from "vue-router";
 
 export default {
     name: "game-page",
     mounted() {
         clearInterval(this.timer)
         this.startTimer()
+        //TODO: Finish penalization system (wrong indicator + 5s increase indicator)
+        //TODO: Implement navigation to next page
+
     },
     computed: {
         store() {
             return store
         },
         builtProductImagePath() {
-            return store.builtProduct.components.join('') + '.png'
+            if (store.builtProduct.components.length >= 1) {
+                return store.builtProduct.components.join('') + '.png'
+            } else {
+                return 'buildyourcart-placeholder-left.gif'
+            }
         },
         componentListForActiveStep() {
             let componentList = []
@@ -128,13 +139,14 @@ export default {
             this.selectedComponent.qty = 1
         },
         addSelectedComponent() {
-            useRouter().push('game-over')
             if (this.isSelectedComponentCorrect()) {
+                const completeArticleCode = this.selectedComponent.articleCode.repeat(this.selectedComponent.qty)
+                console.log(completeArticleCode)
+                store.builtProduct.components.push(completeArticleCode)
                 if (this.activeStep !== 4) {
                     this.activeStep++
                 } else {
-                    this.router.push('game-over')
-                    // Navigate to end screen
+                    //TODO: Navigate to end screen
                 }
             } else {
                 this.penalizePlayer()
@@ -156,6 +168,32 @@ export default {
 </script>
 
 <style scoped>
+.penalization-time {
+    visibility: hidden;
+    position: absolute;
+    left: 18%;
+    top: 4%;
+    font-size: 64px;
+    color: darkred;
+}
+
+.wrong-indicator {
+    visibility: hidden;
+    animation: fade 2s linear;
+}
+
+
+@keyframes fade {
+    0%, 100% {
+        visibility: hidden;
+        opacity: 0
+    }
+    50% {
+        visibility: visible;
+        opacity: 1
+    }
+}
+
 .randomized-product-image {
     width: 400px;
     height: 400px;
@@ -392,6 +430,11 @@ dd {
 
 .individual-parts {
     border: 2px solid #757576;
+}
+
+.individual-parts.active {
+    border-color: #da5715;
+    border-width: 8px;
 }
 
 .individual-parts img {

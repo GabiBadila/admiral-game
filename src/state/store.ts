@@ -2,8 +2,8 @@ import {reactive} from 'vue'
 
 export const store = reactive({
     currentPlayer: {
-        name: "",
-        email: ""
+        name: null,
+        email: null
     },
     secondsElapsed: 0,
     randomizedProduct: {
@@ -18,7 +18,7 @@ export const store = reactive({
         ],
     },
     builtProduct: {
-        components: [""],
+        components: [],
     },
     leaderboard: {
         players: [
@@ -608,6 +608,26 @@ export const store = reactive({
                 {
                     name: "CABLE SUPPORT PROFILE  L160",
                     articleCode: "WAM2N160",
+                },
+                {
+                    name: "CABLEFORK",
+                    articleCode: "WAM2N550",
+                },
+                {
+                    name: "CABLEFORK",
+                    articleCode: "WAM2N550",
+                },
+                {
+                    name: "CABLEFORK",
+                    articleCode: "WAM2N550",
+                },
+                {
+                    name: "CABLEFORK",
+                    articleCode: "WAM2N550",
+                },
+                {
+                    name: "CABLEFORK",
+                    articleCode: "WAM2N550",
                 },
                 {
                     name: "CABLEFORK",

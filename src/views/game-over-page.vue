@@ -1,70 +1,73 @@
 <template>
-    <div class="bg-image"></div>
-    <div class="blur-bg-image"></div>
-    <div class="actual-game-container">
-        <div class="game-screen-divider-container">
-            <div class="randomizer-build-end-left-screen end-screen-flexbox">
-                <div>
-                    <img :src="productImage">
+    <main>
+        <div class="bg-image"></div>
+        <div class="blur-bg-image"></div>
+        <div class="actual-game-container">
+            <div class="game-screen-divider-container">
+                <div class="randomizer-build-end-left-screen end-screen-flexbox">
+                    <div>
+                        <img :src="productImage">
+                    </div>
+                    <div id="final-score-title"> ━ YOUR TIME ━</div>
+                    <div id="user-final-score">{{ timeString }}</div>
+                    <button class="input-button orange" style="margin-top:120px;"><a
+                            href="https://gabibadila.github.io/admiral-game/">New game</a></button>
                 </div>
-                <div id="final-score-title"> ━ YOUR TIME ━</div>
-                <div id="user-final-score">{{ timeString }}</div>
-                <button class="input-button orange" style="margin-top:120px;"><a href="https://gabibadila.github.io/admiral-game/">new game</a></button>
-            </div>
-            <div class="randomizer-build-end-right-screen leaderboard-background">
-                <div class="leaderboard-ranking ranking-title">TOP 10 BEST TIMES</div>
-                <div class="leaderboard-ranking">
+                <div class="randomizer-build-end-right-screen leaderboard-background">
+                    <div class="leaderboard-ranking ranking-title">TOP 10 BEST TIMES</div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 1</p>
-                    <p class="leaderboard-times">4:35</p>
-                </div>
-                <div class="leaderboard-ranking">
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 1</p>
+                        <p class="leaderboard-times">4:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
-                </div>
-                <div class="leaderboard-ranking">
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
+                    <div class="leaderboard-ranking">
 
-                    <p class="leaderboard-player-name">Player Name 2</p>
-                    <p class="leaderboard-times">5:35</p>
+                        <p class="leaderboard-player-name">Player Name 2</p>
+                        <p class="leaderboard-times">5:35</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>
@@ -167,10 +170,14 @@ export default {
     padding: 24px 40px;
     box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
 }
+.orange a{
+    text-decoration: none;
+    text-underline: none;
+    color: #fff;
+}
 
 .blob.orange {
     animation: pulse-orange 2s infinite;
-    /* margin-top: 20px !important; */
 }
 
 @keyframes pulse-orange {

@@ -20,7 +20,7 @@ export default {
 
                 <div class="flexbox-image">
                     <router-link to="randomizer">
-                        <img src="https://www.admiralstaging.com/content/files/images/contentpages/p%2Bs%20game%20images/lightgrey-background.gif"
+                        <img :src="getImageUrl('mainpage-placeholder.png')"
                              width="1100">
                     </router-link>
                 </div>

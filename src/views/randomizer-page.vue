@@ -6,21 +6,25 @@
             <img :src="productImage">
             <div id="contact-info-input" v-if="showContactInfo">
                 <p id="game-intro-info"> Get ready to show off your assembly skills and race against the clock in our
-                    fast-paced transportation cart challenge!<br> Press on RANDOMIZE to play now and see if you have
+                    fast-paced transportation cart challenge!<br> Fill in your contact details and press on RANDOMIZE to
+                    play now and see if you have
                     what it takes to be the ultimate cart builder.</p>
                 <div id="form">
                     <input type="text" placeholder="Player name" class="input-form" id="input-name"
                            v-model="store.currentPlayer.name"/>
                     <input type="email" placeholder="Email address" class="input-form" id="input-email"
                            v-model="store.currentPlayer.email"/>
-                    <button class="input-button orange" @click="randomize">randomize</button>
+                    <button class="input-button orange" @click="randomize"
+                            :class="{disabled:!store.currentPlayer.name}">
+                        RANDOMIZE
+                    </button>
                 </div>
             </div>
 
             <div id="random-cart-info" v-if="showCart">
                 <h1 class="random-cart-title">{{ store.randomizedProduct.name }}</h1>
                 <dl id="random-cart-checklist">
-                    <dd v-for="component in store.randomizedProduct.components">{{ component.name }}</dd>
+                    <dd v-for="component in componentsWithQty"><b>{{ component.qty }}x</b> {{ component.name }} </dd>
                 </dl>
                 <br>
                 <router-link to="game">
@@ -43,23 +47,37 @@ export default {
         },
         productImage() {
             return new URL(`../assets/${this.imagePath}`, import.meta.url).href
+        },
+        componentsWithQty() {
+            const componentsWithCount = []
+            store.randomizedProduct.components.forEach((component) => {
+                if (componentsWithCount.findIndex((compWithCount) => {
+                    return compWithCount.articleCode === component.articleCode
+                }) !== -1) {
+                    return
+                }
+                const uniqueComps = store.randomizedProduct.components.filter((comp) => {
+                    return comp.articleCode === component.articleCode
+                })
+                componentsWithCount.push(component)
+                componentsWithCount[componentsWithCount.length - 1].qty = uniqueComps.length
+            })
+            return componentsWithCount
         }
-
     },
     data() {
         return {
-            imagePath: "timer-icon.png",
+            imagePath: "WAFSF11AWALPSL180WACS160BWAM2P24.png",
             showContactInfo: true,
             showCart: false
         }
     },
     methods: {
         randomize() {
-            console.log('RANDOMIZE ME', store);
             this.showContactInfo = false;
             this.showCart = true;
             const randomIndex = Math.floor(Math.random() * store.allProducts.length)
-            store.randomizedProduct = store.allProducts[0]
+            store.randomizedProduct = store.allProducts[randomIndex]
             this.imagePath = store.randomizedProduct.imagePath
         },
     }
@@ -141,7 +159,11 @@ export default {
     padding: 24px 40px;
     box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
 }
+.orange.disabled{
+    background: lightgray;
+    pointer-events: none;
 
+}
 .blob.orange {
     animation: pulse-orange 2s infinite;
 }
