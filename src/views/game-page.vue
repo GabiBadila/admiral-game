@@ -23,7 +23,7 @@
                 </div>
                 <div class="randomizer-build-end-right-screen">
                     <div id="steps-grid-container">
-                        <div id="steps-grid-title"> SELECT SIDE PANELS</div>
+                        <div id="steps-grid-title"> {{ getTitleForActiveStep() }}</div>
                         <div id="parts-grid-container">
                             <div class="individual-parts" v-for="component in componentListForActiveStep"
                                  v-on:click="clickedComponent(component)"
@@ -113,6 +113,7 @@ export default {
             showContactInfo: true,
             showCart: false,
             activeStep: 1,
+            titlesPerStep: ["SELECT SIDE PANELS", "SELECT LENGTH PROFILES", "SELECT CASTOR SETS", "SELECT INTERIOR CART PARTS"],
             selectedComponent: {
                 name: "",
                 qty: 0,
@@ -124,6 +125,9 @@ export default {
         }
     },
     methods: {
+        getTitleForActiveStep() {
+            return this.titlesPerStep[this.activeStep - 1]
+        },
         writeLeaderboardToLocalStorage() {
             const sortedLeaderboard = store.leaderboard.players.sort((a, b) => {
                 return a - b
