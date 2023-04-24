@@ -16,6 +16,12 @@ export const store = reactive({
                 articleCode: "",
             }
         ],
+        componentsPerStep: {
+            1: [],
+            2: [],
+            3: [],
+            4: []
+        }
     },
     builtProduct: {
         components: [],
@@ -24,6 +30,7 @@ export const store = reactive({
         players: [
             {
                 name: null,
+                email: null,
                 time: 0
             }
         ]
@@ -361,9 +368,9 @@ export const store = reactive({
             ],
         },
         {
-            imagePath: "WAFSF11AWALPSL180WACS160AWAM2P24.png",
+            imagePath: "WAFSF11AWALPSL180WACS160AWABFS016.png",
             name: "BALLETFLOOR CART 180 CM",
-            articleCode: "WAFSF11AWALPSL180WACS160AWAM2P24",
+            articleCode: "WAFSF11AWALPSL180WACS160AWABFS016",
             components: [
                 {
                     name: "FORK-SIDE PANEL SET H 110",
@@ -379,14 +386,14 @@ export const store = reactive({
                 },
                 {
                     name: "BALLET FLOOR ROLLS CART 180",
-                    articleCode: "WAM2P24",
+                    articleCode: "WABFS016",
                 }
             ],
         },
         {
-            imagePath: "WAFSF11AWALPSL180WACS160BWAM2P24.png",
+            imagePath: "WAFSF11AWALPSL180WACS160BWABFS016.png",
             name: "BALLETFLOOR CART 180 CM",
-            articleCode: "WAFSF11AWALPSL180WACS160BWAM2P24",
+            articleCode: "WAFSF11AWALPSL180WACS160BWABFS016",
             components: [
                 {
                     name: "FORK-SIDE PANEL SET H 110",
@@ -402,14 +409,14 @@ export const store = reactive({
                 },
                 {
                     name: "BALLET FLOOR ROLLS CART 180",
-                    articleCode: "WAM2P24",
+                    articleCode: "WABFS016",
                 }
             ],
         },
         {
-            imagePath: "WAFSF11AWALPSL210WACS160AWAM2P25.png",
+            imagePath: "WAFSF11AWALPSL210WACS160AWABFS019.png",
             name: "BALLETFLOOR CART 210 CM",
-            articleCode: "WAFSF11AWALPSL210WACS160AWAM2P25",
+            articleCode: "WAFSF11AWALPSL210WACS160AWABFS019",
             components: [
                 {
                     name: "FORK-SIDE PANEL SET H 110",
@@ -425,14 +432,14 @@ export const store = reactive({
                 },
                 {
                     name: "BALLET FLOOR ROLLS CART 210",
-                    articleCode: "WAM2P25",
+                    articleCode: "WABFS019",
                 }
             ],
         },
         {
-            imagePath: "WAFSF11AWALPSL210WACS160BWAM2P25.png",
+            imagePath: "WAFSF11AWALPSL210WACS160BWABFS019.png",
             name: "BALLETFLOOR CART 210 CM",
-            articleCode: "WAFSF11AWALPSL210WACS160BWAM2P25",
+            articleCode: "WAFSF11AWALPSL210WACS160BWABFS019",
             components: [
                 {
                     name: "FORK-SIDE PANEL SET H 110",
@@ -448,14 +455,14 @@ export const store = reactive({
                 },
                 {
                     name: "BALLET FLOOR ROLLS CART 210",
-                    articleCode: "WAM2P25",
+                    articleCode: "WABFS019",
                 }
             ],
         },
         {
-            imagePath: "WAFSF11AWALPSL230WACS160AWAM2P26.png",
+            imagePath: "WAFSF11AWALPSL230WACS160AWABFS021.png",
             name: "BALLETFLOOR CART 230 CM",
-            articleCode: "WAFSF11AWALPSL230WACS160AWAM2P26",
+            articleCode: "WAFSF11AWALPSL230WACS160AWABFS021",
             components: [
                 {
                     name: "FORK-SIDE PANEL SET H 110",
@@ -471,14 +478,14 @@ export const store = reactive({
                 },
                 {
                     name: "BALLET FLOOR ROLLS CART 230",
-                    articleCode: "WAM2P26",
+                    articleCode: "WABFS021",
                 }
             ],
         },
         {
-            imagePath: "WAFSF11AWALPSL230WACS160BWAM2P26.png",
+            imagePath: "WAFSF11AWALPSL230WACS160BWABFS021.png",
             name: "BALLETFLOOR CART 230 CM",
-            articleCode: "WAFSF11AWALPSL230WACS160BWAM2P26",
+            articleCode: "WAFSF11AWALPSL230WACS160BWABFS021",
             components: [
                 {
                     name: "FORK-SIDE PANEL SET H 110",
@@ -494,7 +501,7 @@ export const store = reactive({
                 },
                 {
                     name: "BALLET FLOOR ROLLS CART 230",
-                    articleCode: "WAM2P26",
+                    articleCode: "WABFS021",
                 }
             ],
         },

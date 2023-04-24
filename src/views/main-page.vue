@@ -1,9 +1,30 @@
 <script>
+import {store} from "@/state/store";
+
 export default {
     name: "main-page",
+    created() {
+        const stringifiedLeaderboard = localStorage.getItem('leaderboard')
+        if (stringifiedLeaderboard) {
+            store.leaderboard.players = JSON.parse(stringifiedLeaderboard)
+        }
+    },
+    computed: {
+        store() {
+            return store
+        },
+        sortedLeaderboard() {
+            return store.leaderboard.players.sort((a, b) => {
+                return a - b
+            }).slice(0, 5)
+        }
+    },
     methods: {
         getImageUrl(imagePath) {
             return new URL(`../assets/${imagePath}`, import.meta.url).href
+        },
+        timeString(seconds) {
+            return new Date(seconds * 1000).toISOString().slice(14, 19);
         },
     }
 }
@@ -20,54 +41,21 @@ export default {
 
                 <div class="flexbox-image">
                     <router-link to="randomizer">
-                        <img :src="getImageUrl('mainpage-placeholder.png')"
+                        <img :src="getImageUrl('main-page-press-to-play.png')"
                              width="1100">
                     </router-link>
                 </div>
                 <div id="game-leaderboard">
                     <div class="leaderboard-ranking">
-                        <img :src="getImageUrl('leaderboard-header-firstscreen.png')">
+                        <img :src="getImageUrl('leaderboard-transparent-background.png')">
                     </div>
-                    <div class="leaderboard-ranking">
-
-                        <div class="leaderboard-trophy-1">
-                            <img src="https://www.admiralstaging.com/content/files/images/contentpages/p%2Bs%20game%20images/ranking-first-place.png"
+                    <div class="leaderboard-ranking" v-for="(player,index) in sortedLeaderboard">
+                        <div :class="(index===0) ? 'leaderboard-trophy-1' : 'leaderboard-trophy-2'">
+                            <img :src="getImageUrl('trophy-leaderboard.png')"
                                  width="180" height="180">
                         </div>
-                        <p class="leaderboard-player-name">Player Name 1</p>
-                        <p class="leaderboard-times">4:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-                        <div class="leaderboard-trophy-2">
-                            <img src="https://www.admiralstaging.com/content/files/images/contentpages/p%2Bs%20game%20images/silver-ranking.png"
-                                 width="100" height="100">
-                        </div>
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-                        <div class="leaderboard-trophy-2">
-                            <img src="https://www.admiralstaging.com/content/files/images/contentpages/p%2Bs%20game%20images/silver-ranking.png"
-                                 width="100" height="100">
-                        </div>
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-                        <div class="leaderboard-trophy-2">
-                            <img src="https://www.admiralstaging.com/content/files/images/contentpages/p%2Bs%20game%20images/silver-ranking.png"
-                                 width="100" height="100">
-                        </div>
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-                        <div class="leaderboard-trophy-2">
-                            <img src="https://www.admiralstaging.com/content/files/images/contentpages/p%2Bs%20game%20images/silver-ranking.png"
-                                 width="100" height="100">
-                        </div>
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
+                        <p class="leaderboard-player-name">{{ player.name }}</p>
+                        <p class="leaderboard-times">{{ timeString(player.time) }}</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +102,6 @@ export default {
 }
 
 .leaderboard-ranking {
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;

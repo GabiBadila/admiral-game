@@ -47,6 +47,7 @@
                                 </button>
                             </div>
                             <button class="input-button orange add" v-on:click="addSelectedComponent">Add</button>
+                            <span class="components-per-step">{{ completedUniqueComponentsForStep }}/{{ uniqueComponentsInCurrentStep }}</span>
                         </div>
                     </div>
                 </div>
@@ -114,7 +115,10 @@ export default {
                 name: "",
                 qty: 0,
                 articleCode: ""
-            }
+            },
+            completedUniqueComponentsForStep: 0,
+            uniqueComponentsInCurrentStep: 1,
+            completeArticleCodesForStep: []
         }
     },
     methods: {
@@ -137,18 +141,45 @@ export default {
         },
         addSelectedComponent() {
             if (this.isSelectedComponentCorrect()) {
-                const completeArticleCode = this.selectedComponent.articleCode.repeat(this.selectedComponent.qty)
-                console.log(completeArticleCode)
-                store.builtProduct.components.push(completeArticleCode)
-                if (this.activeStep !== 4) {
-                    this.activeStep++
-                } else {
-                    clearInterval(this.timer)
-                    this.$router.push('/game-over')
+                this.completedUniqueComponentsForStep++;
+                const repeatedArticleCode = this.selectedComponent.articleCode.repeat(this.selectedComponent.qty)
+                this.completeArticleCodesForStep.push(repeatedArticleCode)
+                if (this.isSelectedComponentLastForStep()) {
+                    store.builtProduct.components.push(...this.completeArticleCodesForStep)
+                    if (this.activeStep !== 4) {
+                        this.nextStep()
+                    } else {
+                        this.endReached()
+                    }
                 }
             } else {
                 this.penalizePlayer()
             }
+        },
+        nextStep() {
+            this.activeStep++
+            this.completedUniqueComponentsForStep = 0
+            this.uniqueComponentsInCurrentStep = store.randomizedProduct.componentsPerStep[this.activeStep].length
+        },
+        isSelectedComponentLastForStep() {
+            const index = store.randomizedProduct.componentsPerStep[this.activeStep.toString()].findIndex((component) => {
+                return component.articleCode === this.selectedComponent.articleCode
+            })
+            if (index !== -1) {
+                store.randomizedProduct.componentsPerStep[this.activeStep.toString()].splice(index, 1)
+            } else console.error(`invalid last component, could not find ${this.selectedComponent.articleCode} in componentsPerStep for step ${this.activeStep}`)
+            return store.randomizedProduct.componentsPerStep[this.activeStep.toString()].length === 0
+        },
+        endReached() {
+            clearInterval(this.timer)
+            let leaderboardEntry = {
+                name: store.currentPlayer.name,
+                email: store.currentPlayer.email,
+                time: store.secondsElapsed
+            }
+            store.leaderboard.players.push(leaderboardEntry)
+            this.$router.push('/game-over')
+
         },
         penalizePlayer() {
             store.secondsElapsed += 5
@@ -163,9 +194,9 @@ export default {
             this.$refs.wrongTimeAddition.style.visibility = "visible"
             this.$refs.wrongTimeAddition.animate(
                 [
-                    { opacity: 0, transform: "translateY(0px)" },
-                    { opacity: 1, transform: "translateY(-50px)" },
-                    { opacity: 0, transform: "translateY(-100px)" }
+                    {opacity: 0, transform: "translateY(0px)"},
+                    {opacity: 1, transform: "translateY(-50px)"},
+                    {opacity: 0, transform: "translateY(-100px)"}
                 ],
                 {
                     duration: 2000,
@@ -206,7 +237,13 @@ export default {
     right: 14%;
     visibility: hidden;
 }
-
+.components-per-step{
+    color: white;
+    position: absolute;
+    font-size: 36px;
+    bottom: 8px;
+    right: 8px;
+}
 /*.wrong-indicator.fade-in-and-out{*/
 /*    animation: fade 2s linear;*/
 /*}*/
@@ -226,7 +263,7 @@ export default {
     width: 600px;
     height: 500px;
     position: absolute;
-    bottom: -3%;
+    bottom: -1%;
     left: -3%;
 }
 
@@ -422,6 +459,7 @@ dd {
     background-color: #3b3b3c;
     padding: 14px 12px 14px 12px;
     border-radius: 4px;
+    position: relative;
 }
 
 #game-timer-container {

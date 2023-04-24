@@ -3,7 +3,7 @@
         <div class="bg-image"></div>
         <div class="blur-bg-image"></div>
         <div class="actual-game-container">
-            <div class="vertical-align-div">
+            <div ref="productImageContainer" class="vertical-align-div">
                 <img :src="productImage">
                 <div id="contact-info-input" v-if="showContactInfo">
                     <p id="game-intro-info"> Get ready to show off your assembly skills and race against the clock in
@@ -83,6 +83,7 @@ export default {
         randomize() {
             this.showContactInfo = false;
             this.showCart = true;
+            this.$refs.productImageContainer.style.transform = "translateY(0)"
             let interval = setInterval(() => {
                 this.iterationLimit--;
                 const randomIndex = Math.floor(Math.random() * store.allProducts.length)
@@ -92,6 +93,7 @@ export default {
                     clearInterval(interval)
                 }
             }, 150)
+
         },
     }
 }

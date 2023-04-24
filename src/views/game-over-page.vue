@@ -9,60 +9,16 @@
                         <img :src="productImage">
                     </div>
                     <div id="final-score-title"> ━ YOUR TIME ━</div>
-                    <div id="user-final-score">{{ timeString }}</div>
+                    <div id="user-final-score">{{ timeString(store.secondsElapsed, true) }}</div>
                     <button class="input-button orange" style="margin-top:120px;"><a
                             href="https://gabibadila.github.io/admiral-game/">New game</a></button>
                 </div>
                 <div class="randomizer-build-end-right-screen leaderboard-background">
                     <div class="leaderboard-ranking ranking-title">TOP 10 BEST TIMES</div>
-                    <div class="leaderboard-ranking">
+                    <div class="leaderboard-ranking" v-for="player in sortedLeaderboard">
 
-                        <p class="leaderboard-player-name">Player Name 1</p>
-                        <p class="leaderboard-times">4:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
-                    </div>
-                    <div class="leaderboard-ranking">
-
-                        <p class="leaderboard-player-name">Player Name 2</p>
-                        <p class="leaderboard-times">5:35</p>
+                        <p class="leaderboard-player-name">{{ player.name }}</p>
+                        <p class="leaderboard-times">{{ timeString(player.time, false) }}</p>
                     </div>
                 </div>
             </div>
@@ -76,17 +32,38 @@ import {store} from "@/state/store";
 export default {
     name: "game-over-page",
     computed: {
-        timeString() {
-            return new Date(store.secondsElapsed * 1000).toISOString().slice(11, 19);
+        store() {
+            return store
         },
         productImage() {
             return new URL(`../assets/${this.imagePath}`, import.meta.url).href
+        },
+        sortedLeaderboard() {
+            return store.leaderboard.players.sort((a, b) => {
+                return a - b
+            }).slice(0,10)
         }
     },
     data() {
         return {
             imagePath: "congratulations-header-endscreen.gif",
         }
+    },
+    mounted() {
+        this.writeLeaderboardToLocalStorage()
+    },
+    methods: {
+        writeLeaderboardToLocalStorage() {
+            const sortedLeaderboard = store.leaderboard.players.sort((a, b) => {
+                return a - b
+            })
+            const stringifiedLeaderboard = JSON.stringify(sortedLeaderboard)
+            localStorage.setItem('leaderboard', stringifiedLeaderboard)
+        },
+        timeString(seconds,showHours) {
+            if (showHours) return new Date(seconds * 1000).toISOString().slice(11, 19);
+            return new Date(seconds * 1000).toISOString().slice(14, 19);
+        },
     }
 }
 </script>
@@ -170,7 +147,8 @@ export default {
     padding: 24px 40px;
     box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
 }
-.orange a{
+
+.orange a {
     text-decoration: none;
     text-underline: none;
     color: #fff;
@@ -282,7 +260,6 @@ hr {
 }
 
 .leaderboard-ranking {
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;
