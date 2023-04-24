@@ -14,8 +14,8 @@ export default {
             return store
         },
         sortedLeaderboard() {
-            return store.leaderboard.players.sort((a, b) => {
-                return a - b
+            return store.leaderboard.players.sort((playerA, playerB) => {
+                return playerA.time - playerB.time
             }).slice(0, 5)
         }
     },

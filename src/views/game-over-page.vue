@@ -39,8 +39,8 @@ export default {
             return new URL(`../assets/${this.imagePath}`, import.meta.url).href
         },
         sortedLeaderboard() {
-            return store.leaderboard.players.sort((a, b) => {
-                return a - b
+            return store.leaderboard.players.sort((playerA, playerB) => {
+                return playerA.time - playerB.time
             }).slice(0, 10)
         }
     },

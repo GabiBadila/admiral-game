@@ -101,7 +101,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF11A", qty: 1}],
                 2: [{articleCode: "WALPSL160", qty: 1}],
                 3: [{articleCode: "WACS100A", qty: 1}],
-                4: [{articleCode: " WARTS0160", qty: 4}],
+                4: [{articleCode: "WARTS0160", qty: 4}],
             }
         },
         {
@@ -142,7 +142,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF11A", qty: 1}],
                 2: [{articleCode: "WALPSL160", qty: 1}],
                 3: [{articleCode: "WACS125B", qty: 1}],
-                4: [{articleCode: " WARTS0160", qty: 4}],
+                4: [{articleCode: "WARTS0160", qty: 4}],
             }
         },
         {
@@ -183,7 +183,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF11A", qty: 1}],
                 2: [{articleCode: "WALPSL180", qty: 1}],
                 3: [{articleCode: "WACS125B", qty: 1}],
-                4: [{articleCode: " WARTS0180", qty: 4}],
+                4: [{articleCode: "WARTS0180", qty: 4}],
             }
         },
         {
@@ -224,7 +224,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF11A", qty: 1}],
                 2: [{articleCode: "WALPSL210", qty: 1}],
                 3: [{articleCode: "WACS125A", qty: 1}],
-                4: [{articleCode: " WARTS0210", qty: 4}],
+                4: [{articleCode: "WARTS0210", qty: 4}],
             }
         },
         {
@@ -265,7 +265,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF21A", qty: 1}],
                 2: [{articleCode: "WALPSL080", qty: 1}],
                 3: [{articleCode: "WACS125B", qty: 1}],
-                4: [{articleCode: " WARTS0080", qty: 4}],
+                4: [{articleCode: "WARTS0080", qty: 4}],
             }
         },
         {
@@ -314,7 +314,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF21A", qty: 1}],
                 2: [{articleCode: "WALPSL160", qty: 1}],
                 3: [{articleCode: "WACS125B", qty: 1}],
-                4: [{articleCode: " WARTS0160", qty: 6}],
+                4: [{articleCode: "WARTS0160", qty: 6}],
             }
         },
         {
@@ -363,7 +363,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF21A", qty: 1}],
                 2: [{articleCode: "WALPSL180", qty: 1}],
                 3: [{articleCode: "WACS125A", qty: 1}],
-                4: [{articleCode: " WARTS0180", qty: 6}],
+                4: [{articleCode: "WARTS0180", qty: 6}],
             }
         },
         {
@@ -412,7 +412,7 @@ export const store = reactive({
                 1: [{articleCode: "WAFSF21A", qty: 1}],
                 2: [{articleCode: "WALPSL210", qty: 1}],
                 3: [{articleCode: "WACS125A", qty: 1}],
-                4: [{articleCode: " WARTS0210", qty: 6}],
+                4: [{articleCode: "WARTS0210", qty: 6}],
             }
         },
         {
@@ -1294,15 +1294,15 @@ export const store = reactive({
                 },
                 {
                     name: "PLASTIC CRATE H 12",
-                    articleCode: " WACRS012",
+                    articleCode: "WACRS012",
                 },
                 {
                     name: "PLASTIC CRATE H 12",
-                    articleCode: " WACRS012",
+                    articleCode: "WACRS012",
                 },
                 {
                     name: "PLASTIC CRATE H 12",
-                    articleCode: " WACRS012",
+                    articleCode: "WACRS012",
                 },
                 {
                     name: "PLASTIC CRATE H 32",
@@ -1713,17 +1713,17 @@ export const store = reactive({
         },
         {
             imagePath: "WABFS016.jpg",
-            name: " BALLET FLOOR ROLLS CART L180",
+            name: "BALLET FLOOR ROLLS CART L180",
             articleCode: "WABFS016",
         },
         {
             imagePath: "WABFS019.jpg",
-            name: " BALLET FLOOR ROLLS CART L210",
+            name: "BALLET FLOOR ROLLS CART L210",
             articleCode: "WABFS019",
         },
         {
             imagePath: "WABFS021.jpg",
-            name: " BALLET FLOOR ROLLS CART L230",
+            name: "BALLET FLOOR ROLLS CART L230",
             articleCode: "WABFS021",
         },
         {

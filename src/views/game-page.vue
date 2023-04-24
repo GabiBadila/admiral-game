@@ -129,8 +129,8 @@ export default {
             return this.titlesPerStep[this.activeStep - 1]
         },
         writeLeaderboardToLocalStorage() {
-            const sortedLeaderboard = store.leaderboard.players.sort((a, b) => {
-                return a - b
+            const sortedLeaderboard = store.leaderboard.players.sort((playerA, playerB) => {
+                return playerA.time - playerB.time
             })
             const stringifiedLeaderboard = JSON.stringify(sortedLeaderboard)
             localStorage.setItem('leaderboard', stringifiedLeaderboard)
