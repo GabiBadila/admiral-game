@@ -1546,7 +1546,7 @@ export const store = reactive({
             componentsPerStep: {
                 1: [{articleCode: "WAM2P65", qty: 2}],
                 2: [{articleCode: "WALPSL050", qty: 1}],
-                3: [{articleCode: "WACS1025B", qty: 1}],
+                3: [{articleCode: "WACS125B", qty: 1}],
                 4: [{articleCode: "WACRS007", qty: 2}, {articleCode: "WACRS022", qty: 2}, {
                     articleCode: "WACRS032",
                     qty: 3
