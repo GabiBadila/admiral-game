@@ -47,7 +47,9 @@
                                 </button>
                             </div>
                             <button class="input-button orange add" v-on:click="addSelectedComponent">Add</button>
-                            <span class="components-per-step">{{ completedUniqueComponentsForStep }}/{{ uniqueComponentsInCurrentStep }}</span>
+                            <span class="components-per-step">{{
+                                completedUniqueComponentsForStep
+                                }}/{{ uniqueComponentsInCurrentStep }}</span>
                         </div>
                     </div>
                 </div>
@@ -122,6 +124,13 @@ export default {
         }
     },
     methods: {
+        writeLeaderboardToLocalStorage() {
+            const sortedLeaderboard = store.leaderboard.players.sort((a, b) => {
+                return a - b
+            })
+            const stringifiedLeaderboard = JSON.stringify(sortedLeaderboard)
+            localStorage.setItem('leaderboard', stringifiedLeaderboard)
+        },
         startTimer() {
             this.timer = setInterval(this.incrementTime, 1000)
         },
@@ -146,6 +155,7 @@ export default {
                 this.completeArticleCodesForStep.push(repeatedArticleCode)
                 if (this.isSelectedComponentLastForStep()) {
                     store.builtProduct.components.push(...this.completeArticleCodesForStep)
+                    this.completeArticleCodesForStep = []
                     if (this.activeStep !== 4) {
                         this.nextStep()
                     } else {
@@ -178,8 +188,8 @@ export default {
                 time: store.secondsElapsed
             }
             store.leaderboard.players.push(leaderboardEntry)
+            this.writeLeaderboardToLocalStorage()
             this.$router.push('/game-over')
-
         },
         penalizePlayer() {
             store.secondsElapsed += 5
@@ -237,13 +247,15 @@ export default {
     right: 14%;
     visibility: hidden;
 }
-.components-per-step{
+
+.components-per-step {
     color: white;
     position: absolute;
     font-size: 36px;
     bottom: 8px;
     right: 8px;
 }
+
 /*.wrong-indicator.fade-in-and-out{*/
 /*    animation: fade 2s linear;*/
 /*}*/

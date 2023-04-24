@@ -27,13 +27,7 @@ export const store = reactive({
         components: [],
     },
     leaderboard: {
-        players: [
-            {
-                name: null,
-                email: null,
-                time: 0
-            }
-        ]
+        players: []
     },
     allProducts: [
         {
@@ -62,6 +56,12 @@ export const store = reactive({
                     articleCode: "WARTS0080",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL080", qty: 1}],
+                3: [{articleCode: "WACS100B", qty: 1}],
+                4: [{articleCode: "WARTS0080", qty: 2}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL160WACS100AWARTS0160WARTS0160WARTS0160WARTS0160.png",
@@ -97,6 +97,12 @@ export const store = reactive({
                     articleCode: "WARTS0160",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL160", qty: 1}],
+                3: [{articleCode: "WACS100A", qty: 1}],
+                4: [{articleCode: " WARTS0160", qty: 4}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL160WACS125BWARTS0160WARTS0160WARTS0160WARTS0160.png",
@@ -132,6 +138,12 @@ export const store = reactive({
                     articleCode: "WARTS0160",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL160", qty: 1}],
+                3: [{articleCode: "WACS125B", qty: 1}],
+                4: [{articleCode: " WARTS0160", qty: 4}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL180WACS125BWARTS0180WARTS0180WARTS0180WARTS0180.png",
@@ -167,6 +179,12 @@ export const store = reactive({
                     articleCode: "WARTS0180",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL180", qty: 1}],
+                3: [{articleCode: "WACS125B", qty: 1}],
+                4: [{articleCode: " WARTS0180", qty: 4}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL210WACS125AWARTS0210WARTS0210WARTS0210WARTS0210.png",
@@ -202,6 +220,12 @@ export const store = reactive({
                     articleCode: "WARTS0210",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL210", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: " WARTS0210", qty: 4}],
+            }
         },
         {
             imagePath: "WAFSF21AWALPSL080WACS125BWARTS0080WARTS0080WARTS0080WARTS0080.png",
@@ -237,6 +261,12 @@ export const store = reactive({
                     articleCode: "WARTS0080",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF21A", qty: 1}],
+                2: [{articleCode: "WALPSL080", qty: 1}],
+                3: [{articleCode: "WACS125B", qty: 1}],
+                4: [{articleCode: " WARTS0080", qty: 4}],
+            }
         },
         {
             imagePath: "WAFSF21AWALPSL160WACS125BWARTS0160WARTS0160WARTS0160WARTS0160WARTS0160WARTS0160.png",
@@ -280,6 +310,12 @@ export const store = reactive({
                     articleCode: "WARTS0160",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF21A", qty: 1}],
+                2: [{articleCode: "WALPSL160", qty: 1}],
+                3: [{articleCode: "WACS125B", qty: 1}],
+                4: [{articleCode: " WARTS0160", qty: 6}],
+            }
         },
         {
             imagePath: "WAFSF21AWALPSL180WACS125AWARTS0180WARTS0180WARTS0180WARTS0180WARTS0180WARTS0180.png",
@@ -323,6 +359,12 @@ export const store = reactive({
                     articleCode: "WARTS0180",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF21A", qty: 1}],
+                2: [{articleCode: "WALPSL180", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: " WARTS0180", qty: 6}],
+            }
         },
         {
             imagePath: "WAFSF21AWALPSL210WACS125AWARTS0210WARTS0210WARTS0210WARTS0210WARTS0210WARTS0210.png",
@@ -366,6 +408,12 @@ export const store = reactive({
                     articleCode: "WARTS0210",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF21A", qty: 1}],
+                2: [{articleCode: "WALPSL210", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: " WARTS0210", qty: 6}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL180WACS160AWABFS016.png",
@@ -389,6 +437,12 @@ export const store = reactive({
                     articleCode: "WABFS016",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL180", qty: 1}],
+                3: [{articleCode: "WACS160A", qty: 1}],
+                4: [{articleCode: "WABFS016", qty: 1}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL180WACS160BWABFS016.png",
@@ -412,6 +466,12 @@ export const store = reactive({
                     articleCode: "WABFS016",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL180", qty: 1}],
+                3: [{articleCode: "WACS160B", qty: 1}],
+                4: [{articleCode: "WABFS016", qty: 1}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL210WACS160AWABFS019.png",
@@ -435,6 +495,12 @@ export const store = reactive({
                     articleCode: "WABFS019",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL210", qty: 1}],
+                3: [{articleCode: "WACS160A", qty: 1}],
+                4: [{articleCode: "WABFS019", qty: 1}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL210WACS160BWABFS019.png",
@@ -458,6 +524,12 @@ export const store = reactive({
                     articleCode: "WABFS019",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL210", qty: 1}],
+                3: [{articleCode: "WACS160B", qty: 1}],
+                4: [{articleCode: "WABFS019", qty: 1}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL230WACS160AWABFS021.png",
@@ -481,6 +553,12 @@ export const store = reactive({
                     articleCode: "WABFS021",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL230", qty: 1}],
+                3: [{articleCode: "WACS160A", qty: 1}],
+                4: [{articleCode: "WABFS021", qty: 1}],
+            }
         },
         {
             imagePath: "WAFSF11AWALPSL230WACS160BWABFS021.png",
@@ -504,6 +582,12 @@ export const store = reactive({
                     articleCode: "WABFS021",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSF11A", qty: 1}],
+                2: [{articleCode: "WALPSL230", qty: 1}],
+                3: [{articleCode: "WACS160B", qty: 1}],
+                4: [{articleCode: "WABFS021", qty: 1}],
+            }
         },
         {
             imagePath: "WAFSS11BWALPSL080WACS100AWAM2N080WAM2N080WAM2N550WAM2N550WAM2N550WAM2N550.png",
@@ -547,6 +631,12 @@ export const store = reactive({
                     articleCode: "WAM2N550",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSS11B", qty: 1}],
+                2: [{articleCode: "WALPSL080", qty: 1}],
+                3: [{articleCode: "WACS100A", qty: 1}],
+                4: [{articleCode: "WAM2N080", qty: 2}, {articleCode: "WAM2N550", qty: 4}],
+            }
         },
         {
             imagePath: "WAFSS11BWALPSL080WACS100BWAM2N080WAM2N080WAM2N550WAM2N550WAM2N550WAM2N550.png",
@@ -590,6 +680,12 @@ export const store = reactive({
                     articleCode: "WAM2N550",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSS11B", qty: 1}],
+                2: [{articleCode: "WALPSL080", qty: 1}],
+                3: [{articleCode: "WACS100B", qty: 1}],
+                4: [{articleCode: "WAM2N080", qty: 2}, {articleCode: "WAM2N550", qty: 4}],
+            }
         },
         {
             imagePath: "WAFSS11BWALPSL160WACS125AWAM2N160WAM2N160WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550.png",
@@ -641,6 +737,12 @@ export const store = reactive({
                     articleCode: "WAM2N550",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSS11B", qty: 1}],
+                2: [{articleCode: "WALPSL160", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: "WAM2N160", qty: 2}, {articleCode: "WAM2N550", qty: 6}],
+            }
         },
         {
             imagePath: "WAFSS11BWALPSL210WACS125AWAM2N210WAM2N210WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550.png",
@@ -700,6 +802,12 @@ export const store = reactive({
                     articleCode: "WAM2N550",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSS11B", qty: 1}],
+                2: [{articleCode: "WALPSL210", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: "WAM2N210", qty: 2}, {articleCode: "WAM2N550", qty: 8}],
+            }
         },
         {
             imagePath: "WAFSS21BWALPSL080WACS100AWAM2N080WAM2N080WAM2N080WAM2N550WAM2N550WAM2N550.png",
@@ -743,6 +851,12 @@ export const store = reactive({
                     articleCode: "WAM2N550",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSS21B", qty: 1}],
+                2: [{articleCode: "WALPSL080", qty: 1}],
+                3: [{articleCode: "WACS100A", qty: 1}],
+                4: [{articleCode: "WAM2N080", qty: 3}, {articleCode: "WAM2N550", qty: 3}],
+            }
         },
         {
             imagePath: "WAFSS21BWALPSL160WACS125AWAM2N160WAM2N160WAM2N160WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550.png",
@@ -822,6 +936,12 @@ export const store = reactive({
                     articleCode: "WAM2N550",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSS21B", qty: 1}],
+                2: [{articleCode: "WALPSL160", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: "WAM2N160", qty: 3}, {articleCode: "WAM2N550", qty: 12}],
+            }
         },
         {
             imagePath: "WAFSS21BWALPSL210WACS125AWAM2N210WAM2N210WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550WAM2N550.png",
@@ -897,6 +1017,12 @@ export const store = reactive({
                     articleCode: "WAM2N550",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAFSS21B", qty: 1}],
+                2: [{articleCode: "WALPSL210", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: "WAM2N210", qty: 2}, {articleCode: "WAM2N550", qty: 12}],
+            }
         },
         {
             imagePath: "WAM2P64WAM2P64WALPSL050WACS100BWACRS007WACRS007WACRS007WACRS007WACRS007WACRS007WACRS007WACRS007.png",
@@ -952,6 +1078,12 @@ export const store = reactive({
                     articleCode: "WACRS007",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P64", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS100B", qty: 1}],
+                4: [{articleCode: "WACRS007", qty: 8}],
+            }
         },
         {
             imagePath: "WAM2P64WAM2P64WALPSL050WACS100AWACRS007WACRS032WACRS032.png",
@@ -987,6 +1119,12 @@ export const store = reactive({
                     articleCode: "WACRS032",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P64", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS100A", qty: 1}],
+                4: [{articleCode: "WACRS007", qty: 1}, {articleCode: "WACRS032", qty: 2}],
+            }
         },
         {
             imagePath: "WAM2P64WAM2P64WALPSL050WACS125BWACRS007WACRS012WACRS012WACRS012WACRS022.png",
@@ -1030,6 +1168,15 @@ export const store = reactive({
                     articleCode: "WACRS022",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P64", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS125B", qty: 1}],
+                4: [{articleCode: "WACRS007", qty: 1}, {articleCode: "WACRS012", qty: 3}, {
+                    articleCode: "WACRS022",
+                    qty: 1
+                }],
+            }
         },
         {
             imagePath: "WAM2P64WAM2P64WALPSL050WACS100BWACRS012WACRS012WACRS022WACRS022.png",
@@ -1069,6 +1216,12 @@ export const store = reactive({
                     articleCode: "WACRS022",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P64", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS100B", qty: 1}],
+                4: [{articleCode: "WACRS012", qty: 2}, {articleCode: "WACRS022", qty: 2}],
+            }
         },
         {
             imagePath: "WAM2P64WAM2P64WALPSL050WACS100AWACRS007WACRS007WACRS022WACRS032.png",
@@ -1108,6 +1261,15 @@ export const store = reactive({
                     articleCode: "WACRS032",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P64", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS100A", qty: 1}],
+                4: [{articleCode: "WACRS007", qty: 2}, {articleCode: "WACRS022", qty: 1}, {
+                    articleCode: "WACRS032",
+                    qty: 1
+                }],
+            }
         },
         {
             imagePath: "WAM2P64WAM2P64WALPSL050WACS100AWACRS012WACRS012WACRS012WACRS032.png",
@@ -1147,6 +1309,12 @@ export const store = reactive({
                     articleCode: "WACRS032",
                 }
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P64", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS100A", qty: 1}],
+                4: [{articleCode: "WACRS012", qty: 3}, {articleCode: "WACRS032", qty: 1}],
+            }
         },
         {
             imagePath: "WAM2P65WAM2P65WALPSL050WACS100AWACRS007WACRS007WACRS007WACRS007WACRS022WACRS022WACRS022WACRS022WACRS032.png",
@@ -1206,6 +1374,15 @@ export const store = reactive({
                     articleCode: "WACRS032",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P65", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS100A", qty: 1}],
+                4: [{articleCode: "WACRS007", qty: 4}, {articleCode: "WACRS022", qty: 4}, {
+                    articleCode: "WACRS032",
+                    qty: 1
+                }],
+            }
         },
         {
             imagePath: "WAM2P65WAM2P65WALPSL050WACS125AWACRS032WACRS032WACRS032WACRS032WACRS032.png",
@@ -1249,6 +1426,12 @@ export const store = reactive({
                     articleCode: "WACRS032",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P65", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: "WACRS032", qty: 5}],
+            }
         },
         {
             imagePath: "WAM2P65WAM2P65WALPSL050WACS125AWACRS012WACRS012WACRS022WACRS022WACRS022WACRS032WACRS032.png",
@@ -1300,6 +1483,15 @@ export const store = reactive({
                     articleCode: "WACRS032",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P65", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS125A", qty: 1}],
+                4: [{articleCode: "WACRS012", qty: 2}, {articleCode: "WACRS022", qty: 3}, {
+                    articleCode: "WACRS032",
+                    qty: 2
+                }],
+            }
         },
         {
             imagePath: "WAM2P65WAM2P65WALPSL050WACS125BWACRS007WACRS007WACRS022WACRS022WACRS032WACRS032WACRS032.png",
@@ -1351,6 +1543,15 @@ export const store = reactive({
                     articleCode: "WACRS032",
                 },
             ],
+            componentsPerStep: {
+                1: [{articleCode: "WAM2P65", qty: 2}],
+                2: [{articleCode: "WALPSL050", qty: 1}],
+                3: [{articleCode: "WACS1025B", qty: 1}],
+                4: [{articleCode: "WACRS007", qty: 2}, {articleCode: "WACRS022", qty: 2}, {
+                    articleCode: "WACRS032",
+                    qty: 3
+                }],
+            }
         },
     ],
     step1Components: [

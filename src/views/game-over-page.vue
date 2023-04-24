@@ -41,7 +41,7 @@ export default {
         sortedLeaderboard() {
             return store.leaderboard.players.sort((a, b) => {
                 return a - b
-            }).slice(0,10)
+            }).slice(0, 10)
         }
     },
     data() {
@@ -49,18 +49,8 @@ export default {
             imagePath: "congratulations-header-endscreen.gif",
         }
     },
-    mounted() {
-        this.writeLeaderboardToLocalStorage()
-    },
     methods: {
-        writeLeaderboardToLocalStorage() {
-            const sortedLeaderboard = store.leaderboard.players.sort((a, b) => {
-                return a - b
-            })
-            const stringifiedLeaderboard = JSON.stringify(sortedLeaderboard)
-            localStorage.setItem('leaderboard', stringifiedLeaderboard)
-        },
-        timeString(seconds,showHours) {
+        timeString(seconds, showHours) {
             if (showHours) return new Date(seconds * 1000).toISOString().slice(11, 19);
             return new Date(seconds * 1000).toISOString().slice(14, 19);
         },
