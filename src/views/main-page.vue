@@ -41,8 +41,7 @@ export default {
 
                 <div class="flexbox-image">
                     <router-link to="randomizer">
-                        <img :src="getImageUrl('main-page-press-to-play.png')"
-                             width="1100">
+                        <img :src="getImageUrl('main-page-press-to-play.png')">
                     </router-link>
                 </div>
                 <div id="game-leaderboard">
