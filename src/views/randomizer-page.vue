@@ -3,32 +3,38 @@
         <div class="bg-image"></div>
         <div class="blur-bg-image"></div>
         <div class="actual-game-container">
-            <img :src="productImage">
-            <div id="contact-info-input" v-if="showContactInfo">
-                <p id="game-intro-info"> Get ready to show off your assembly skills and race against the clock in our
-                    fast-paced transportation cart challenge!<br> Fill in your contact details and press on RANDOMIZE to
-                    play now and see if you have
-                    what it takes to be the ultimate cart builder.</p>
-                <div id="form">
-                    <input type="text" placeholder="Player name" class="input-form" id="input-name"
-                           v-model="store.currentPlayer.name"/>
-                    <input type="email" placeholder="Email address" class="input-form" id="input-email"
-                           v-model="store.currentPlayer.email"/>
-                    <button class="input-button orange" @click="randomize"
-                            :class="{disabled:!store.currentPlayer.name}">
-                        RANDOMIZE
-                    </button>
+            <div class="vertical-align-div">
+                <img :src="productImage">
+                <div id="contact-info-input" v-if="showContactInfo">
+                    <p id="game-intro-info"> Get ready to show off your assembly skills and race against the clock in
+                        our
+                        fast-paced transportation cart challenge!<br> Fill in your contact details and press on
+                        RANDOMIZE to
+                        play now and see if you have
+                        what it takes to be the ultimate cart builder.</p>
+                    <div id="form">
+                        <input type="text" placeholder="Player name" class="input-form" id="input-name"
+                               v-model="store.currentPlayer.name"/>
+                        <input type="email" placeholder="Email address" class="input-form" id="input-email"
+                               v-model="store.currentPlayer.email"/>
+                        <button class="input-button orange" @click="randomize"
+                                :class="{disabled:!store.currentPlayer.name}">
+                            RANDOMIZE
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div id="random-cart-info" v-if="showCart">
                 <h1 class="random-cart-title">{{ store.randomizedProduct.name }}</h1>
                 <dl id="random-cart-checklist">
-                    <dd v-for="component in componentsWithQty"><b>{{ component.qty }}x</b> {{ component.name }} </dd>
+                    <dd v-for="component in componentsWithQty"><b>{{ component.qty }}x</b> {{ component.name }}</dd>
                 </dl>
                 <br>
                 <router-link to="game">
-                    <button class="input-button blob orange">Start game</button>
+                    <button class="input-button blob orange start-game-btn" :class="{visible: iterationLimit === 0}">
+                        Start game
+                    </button>
                 </router-link>
             </div>
         </div>
@@ -69,16 +75,23 @@ export default {
         return {
             imagePath: "WAFSF11AWALPSL180WACS160BWAM2P24.png",
             showContactInfo: true,
-            showCart: false
+            showCart: false,
+            iterationLimit: 15
         }
     },
     methods: {
         randomize() {
             this.showContactInfo = false;
             this.showCart = true;
-            const randomIndex = Math.floor(Math.random() * store.allProducts.length)
-            store.randomizedProduct = store.allProducts[randomIndex]
-            this.imagePath = store.randomizedProduct.imagePath
+            let interval = setInterval(() => {
+                this.iterationLimit--;
+                const randomIndex = Math.floor(Math.random() * store.allProducts.length)
+                store.randomizedProduct = store.allProducts[randomIndex]
+                this.imagePath = store.randomizedProduct.imagePath
+                if (this.iterationLimit === 0) {
+                    clearInterval(interval)
+                }
+            }, 150)
         },
     }
 }
@@ -159,11 +172,20 @@ export default {
     padding: 24px 40px;
     box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
 }
-.orange.disabled{
+
+.orange.disabled {
     background: lightgray;
     pointer-events: none;
-
 }
+
+.start-game-btn {
+    visibility: hidden;
+}
+
+.start-game-btn.visible {
+    visibility: visible;
+}
+
 .blob.orange {
     animation: pulse-orange 2s infinite;
 }
@@ -185,6 +207,9 @@ export default {
     }
 }
 
+.vertical-align-div {
+    transform: translateY(15%);
+}
 
 #random-cart-checklist {
     font-size: 48px;

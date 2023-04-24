@@ -1348,13 +1348,23 @@ export const store = reactive({
     ],
     step1Components: [
         {
+            imagePath: "WAM2P64.jpg",
+            name: "SLIM-LINE PANEL H 110",
+            articleCode: "WAM2P64",
+        },
+        {
+            imagePath: "WAM2P65.jpg",
+            name: "SLIM-LINE PANEL H 203",
+            articleCode: "WAM2P65",
+        },
+        {
             imagePath: "WAFSF11A.jpg",
             name: "FORK-SIDE PANEL SET H 110",
             articleCode: "WAFSF11A",
         },
         {
             imagePath: "WAFSF11B.jpg",
-            name: "FORK-SIDE PANEL SET H 110 W CENTRE BRACKET",
+            name: "FORK-SIDE PANEL SET H 110 WITH CENTRE BRACKET",
             articleCode: "WAFSF11B",
         },
         {
@@ -1364,18 +1374,8 @@ export const store = reactive({
         },
         {
             imagePath: "WAFSF21B.jpg",
-            name: "FORK-SIDE PANEL SET H 203 W CENTRE BRACKET",
+            name: "FORK-SIDE PANEL SET H 203 WITH CENTRE BRACKET",
             articleCode: "WAFSF21B",
-        },
-        {
-            imagePath: "WAFSS11B.jpg",
-            name: "SLIM-LINE PANEL SET H 110 W CENTRE BRACKET",
-            articleCode: "WAFSS11B",
-        },
-        {
-            imagePath: "WAFSS21B.jpg",
-            name: "SLIM-LINE PANEL SET H 203 W CENTRE BRACKET",
-            articleCode: "WAFSS21B",
         },
         {
             imagePath: "WAFSS11A.jpg",
@@ -1383,170 +1383,170 @@ export const store = reactive({
             articleCode: "WAFSS11A",
         },
         {
+            imagePath: "WAFSS11B.jpg",
+            name: "SLIM-LINE PANEL SET H 110 WITH CENTRE BRACKET",
+            articleCode: "WAFSS11B",
+        },
+        {
             imagePath: "WAFSS21A.jpg",
             name: "SLIM-LINE PANEL SET H 203",
             articleCode: "WAFSS21A",
         },
         {
-            imagePath: "WAM2P64.jpg",
-            name: "SLIM-LINE PANEL H 110",
-            articleCode: "WAM2P64",
+            imagePath: "WAFSS21B.jpg",
+            name: "SLIM-LINE PANEL SET H 203 WITH CENTRE BRACKET",
+            articleCode: "WAFSS21B",
         },
-        {
-            imagePath: "WAM2P65.jpg",
-            name: "SLIM-LINE PANEL H 203",
-            articleCode: "WAM2P65",
-        }
     ],
     step2Components: [
         {
+            imagePath: "WALPSL050.jpg",
+            name: "LENGTH PROFILES SET L50",
+            articleCode: "WALPSL050",
+        },
+        {
             imagePath: "WALPSL080.jpg",
-            name: "LENGTH PROFILES L80, SET OF 4",
+            name: "LENGTH PROFILES SET L80",
             articleCode: "WALPSL080",
         },
         {
             imagePath: "WALPSL160.jpg",
-            name: "LENGTH PROFILES L160, SET OF 4",
+            name: "LENGTH PROFILES SET L160",
             articleCode: "WALPSL160",
         },
         {
             imagePath: "WALPSL180.jpg",
-            name: "LENGTH PROFILES L180, SET OF 4",
+            name: "LENGTH PROFILES SET L180",
             articleCode: "WALPSL180",
         },
         {
             imagePath: "WALPSL210.jpg",
-            name: "LENGTH PROFILES L210, SET OF 4",
+            name: "LENGTH PROFILES SET L210",
             articleCode: "WALPSL210",
         },
         {
-            imagePath: "WALPSL050.jpg",
-            name: "LENGTH PROFILES L50, SET OF 4",
-            articleCode: "WALPSL050",
-        },
-        {
             imagePath: "WALPSL230.jpg",
-            name: "LENGTH PROFILES L230, SET OF 4",
+            name: "LENGTH PROFILES SET L230",
             articleCode: "WALPSL230",
         }
     ],
     step3Components: [
         {
             imagePath: "WACS100A.jpg",
-            name: "CASTORSET Ø100MM 4X SWIVEL WITH BRAKE",
+            name: "CASTORSET Ø100MM SWIVEL WITH BRAKE",
             articleCode: "WACS100A",
         },
         {
             imagePath: "WACS100B.jpg",
-            name: "CASTORSET Ø100MM 2X SWIVEL W BRAKE 2X NO BRAKE",
+            name: "CASTORSET Ø100MM SWIVEL WITH AND WITHOUT BRAKE",
             articleCode: "WACS100B",
         },
         {
             imagePath: "WACS125A.jpg",
-            name: "CASTORSET Ø125MM 4X SWIVEL WITH BRAKE",
+            name: "CASTORSET Ø125MM SWIVEL WITH BRAKE",
             articleCode: "WACS125A",
         },
         {
             imagePath: "WACS125B.jpg",
-            name: "CASTORSET Ø125MM 2X SWIVEL W BRAKE 2X NO BRAKE",
+            name: "CASTORSET Ø125MM SWIVEL WITH AND WITHOUT BRAKE ",
             articleCode: "WACS125B",
         },
         {
             imagePath: "WACS160A.jpg",
-            name: "CASTORSET Ø160MM 4X SWIVEL WITH BRAKE",
+            name: "CASTORSET Ø160MM SWIVEL WITH BRAKE",
             articleCode: "WACS160A",
         },
         {
             imagePath: "WACS160B.jpg",
-            name: "CASTORSET Ø160MM 2X SWIVEL W BRAKE 2X NO BRAKE",
+            name: "CASTORSET Ø160MM SWIVEL WITH AND WITHOUT BRAKE ",
             articleCode: "WACS160B",
         }
     ],
     step4Components: [
         {
             imagePath: "WARTS0080.jpg",
-            name: "HANGING TUBE ALU 50MM FOR L80 WITH FORKSET",
+            name: "HANGING TUBE L80",
             articleCode: "WARTS0080",
         },
         {
             imagePath: "WARTS0160.jpg",
-            name: "HANGING TUBE ALU 50MM L160 WITH FORKSET",
+            name: "HANGING TUBE L160 ",
             articleCode: "WARTS0160",
         },
         {
             imagePath: "WARTS0180.jpg",
-            name: "HANGING TUBE ALU 50MM L180 WITH FORKSET",
+            name: "HANGING TUBE L180",
             articleCode: "WARTS0180",
         },
         {
             imagePath: "WARTS0210.jpg",
-            name: "HANGING TUBE STEEL 48MM FOR L210 WITH FORKSET",
+            name: "HANGING TUBE L210 ",
             articleCode: "WARTS0210",
         },
         {
             imagePath: "WAM2N080.jpg",
-            name: "CABLE SUPPORT PROFILE FOR L 80CM INCL, FORKSET",
+            name: "CABLE SUPPORT PROFILE L80",
             articleCode: "WAM2N080",
         },
         {
             imagePath: "WAM2N160.jpg",
-            name: "CABLE SUPPORT PROFILE FOR L 160CM INCL, FORKSET",
+            name: "CABLE SUPPORT PROFILE L160 ",
             articleCode: "WAM2N160",
         },
         {
             imagePath: "WAM2N210.jpg",
-            name: "CABLE SUPPORT PROFILE FOR L 210CM INCL, FORKSET",
+            name: "CABLE SUPPORT PROFILE L210",
             articleCode: "WAM2N210",
         },
         {
-            imagePath: "WABFS021.jpg",
-            name: "BALLETFLOOR CART L230 WITH 6XTUBES",
-            articleCode: "WABFS021",
-        },
-        {
-            imagePath: "WABFS019.jpg",
-            name: "BALLETFLOOR CART L210 WITH 6XTUBES",
-            articleCode: "WABFS019",
+            imagePath: "WAM2N550.jpg",
+            name: "CABLEFORK",
+            articleCode: "WAM2N550",
         },
         {
             imagePath: "WABFS016.jpg",
-            name: "BALLETFLOOR CART L180 WITH 6XTUBES",
+            name: " BALLET FLOOR ROLLS CART L180",
             articleCode: "WABFS016",
         },
         {
+            imagePath: "WABFS019.jpg",
+            name: " BALLET FLOOR ROLLS CART L210",
+            articleCode: "WABFS019",
+        },
+        {
+            imagePath: "WABFS021.jpg",
+            name: " BALLET FLOOR ROLLS CART L230",
+            articleCode: "WABFS021",
+        },
+        {
             imagePath: "WACRS007.jpg",
-            name: "PLASTIC CRATE H 7.5 WITH DRAWER PROFILE SET",
+            name: "PLASTIC CRATE H 7.5",
             articleCode: "WACRS007",
         },
         {
             imagePath: "WACRS012.jpg",
-            name: "PLASTIC CRATE H 12 WITH DRAWER PROFILE SET",
+            name: "PLASTIC CRATE H 12",
             articleCode: "WACRS012",
         },
         {
             imagePath: "WACRS017.jpg",
-            name: "PLASTIC CRATE H 17 WITH DRAWER PROFILE SET",
+            name: "PLASTIC CRATE H 17",
             articleCode: "WACRS017",
         },
         {
             imagePath: "WACRS022.jpg",
-            name: "PLASTIC CRATE H 22 WITH DRAWER PROFILE SET",
+            name: "PLASTIC CRATE H 22",
             articleCode: "WACRS022",
         },
         {
             imagePath: "WACRS027.jpg",
-            name: "PLASTIC CRATE H 27 WITH DRAWER PROFILE SET",
+            name: "PLASTIC CRATE H 27",
             articleCode: "WACRS027",
         },
         {
             imagePath: "WACRS032.jpg",
-            name: "PLASTIC CRATE H 32 WITH DRAWER PROFILE SET",
+            name: "PLASTIC CRATE H 32",
             articleCode: "WACRS032",
         },
-        {
-            imagePath: "WAM2N550.jpg",
-            name: "CABLEFORK L= 550 (WITH SCREWSET)",
-            articleCode: "WAM2N550",
-        }
     ],
 })

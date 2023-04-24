@@ -242,7 +242,7 @@ hr {
 }
 
 #user-final-score {
-    font-size: 90px;
+    font-size: 120px;
     /* background: rgba(59,59,60,.2); */
     margin-top: 20px;
     padding: 12px 24px;

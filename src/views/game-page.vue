@@ -11,7 +11,7 @@
                         </div>
                         <div id="actual-game-timer">{{ timeString }}</div>
                     </div>
-                    <span class="penalization-time">+5</span>
+                    <span ref="wrongTimeAddition" class="penalization-time">+5</span>
                 </div>
 
                 <img class="randomized-product-image" :src="getImageUrl(store.randomizedProduct.imagePath)">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <img class="wrong-indicator" :src="getImageUrl('incorrect-choice-image.png')">
+            <img ref="wrongIcon" class="wrong-indicator" :src="getImageUrl('incorrect-choice-image.png')">
             <div class="game-steps-progress">
                 <div class="bottom-steps step1-image" :class="{active:isActiveStep(1)}"></div>
                 <div class="bottom-steps step2-image" :class="{active:isActiveStep(2)}"></div>
@@ -70,9 +70,6 @@ export default {
     mounted() {
         clearInterval(this.timer)
         this.startTimer()
-        //TODO: Finish penalization system (wrong indicator + 5s increase indicator)
-        //TODO: Implement navigation to next page
-
     },
     computed: {
         store() {
@@ -146,15 +143,41 @@ export default {
                 if (this.activeStep !== 4) {
                     this.activeStep++
                 } else {
-                    //TODO: Navigate to end screen
+                    clearInterval(this.timer)
+                    this.$router.push('/game-over')
                 }
             } else {
                 this.penalizePlayer()
-                //Penalization + WRONG inidcator
             }
         },
         penalizePlayer() {
             store.secondsElapsed += 5
+            this.$refs.wrongIcon.style.visibility = "visible"
+            this.$refs.wrongIcon.animate(
+                {opacity: [0, 1, 0]},
+                {duration: 2000, easing: "ease-in-out", iterations: 1}
+            ).onfinish = () => {
+                this.$refs.wrongIcon.style.visibility = "hidden"
+            }
+
+            this.$refs.wrongTimeAddition.style.visibility = "visible"
+            this.$refs.wrongTimeAddition.animate(
+                [
+                    { opacity: 0, transform: "translateY(0px)" },
+                    { opacity: 1, transform: "translateY(-50px)" },
+                    { opacity: 0, transform: "translateY(-100px)" }
+                ],
+                {
+                    duration: 2000,
+                    easing: "ease-in-out",
+                    iterations: 1,
+                    fill: "forwards"
+                }
+            ).onfinish = () => {
+                this.$refs.wrongTimeAddition.style.visibility = "hidden"
+            }
+
+
         },
         isSelectedComponentCorrect() {
             const filteredComponents = store.randomizedProduct.components.filter((component) => {
@@ -178,28 +201,33 @@ export default {
 }
 
 .wrong-indicator {
+    position: absolute;
+    top: 17%;
+    right: 14%;
     visibility: hidden;
-    animation: fade 2s linear;
 }
 
+/*.wrong-indicator.fade-in-and-out{*/
+/*    animation: fade 2s linear;*/
+/*}*/
 
-@keyframes fade {
-    0%, 100% {
-        visibility: hidden;
-        opacity: 0
-    }
-    50% {
-        visibility: visible;
-        opacity: 1
-    }
-}
+/*@keyframes fade {*/
+/*    0%, 100% {*/
+/*        visibility: hidden;*/
+/*        opacity: 0*/
+/*    }*/
+/*    50% {*/
+/*        visibility: visible;*/
+/*        opacity: 1*/
+/*    }*/
+/*}*/
 
 .randomized-product-image {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     position: absolute;
-    top: 8%;
-    left: 0;
+    bottom: -3%;
+    left: -3%;
 }
 
 .bg-image {
