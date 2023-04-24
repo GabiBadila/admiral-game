@@ -124,6 +124,8 @@ export default {
     font-size: 40px;
     flex: 3;
     font-weight: 200;
+    text-align: start;
+    margin-left: 3%;
 }
 
 .leaderboard-times {
