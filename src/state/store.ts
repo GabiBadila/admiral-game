@@ -1386,6 +1386,16 @@ export const store = reactive({
             imagePath: "WAFSS21A.jpg",
             name: "SLIM-LINE PANEL SET H 203",
             articleCode: "WAFSS21A",
+        },
+        {
+            imagePath: "WAM2P64.jpg",
+            name: "SLIM-LINE PANEL H 110",
+            articleCode: "WAM2P64",
+        },
+        {
+            imagePath: "WAM2P65.jpg",
+            name: "SLIM-LINE PANEL H 203",
+            articleCode: "WAM2P65",
         }
     ],
     step2Components: [
